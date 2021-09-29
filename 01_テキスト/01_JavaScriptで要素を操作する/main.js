@@ -26,6 +26,9 @@ elementClassName.className = "nice-element"
 const elementClassList = document.getElementById("element-classList")
 elementClassList.classList.add("great-element")
 
+const Ele = document.getElementById("elementnoId")
+console.log(Ele)
+
 // 要素を追加する - appendChild
 const elementAppendChild = document.getElementById("element-appendChild")
 const div1 = document.createElement("div")
@@ -41,3 +44,44 @@ elementPrepend.prepend(div2)
 // 要素を削除する - remove
 const elementRemove = document.getElementById("element-remove")
 elementRemove.remove()
+
+const btns = document.getElementById("buttons")
+const button0 = buttons.children[0]
+console.log(btns)
+console.log(button0)
+
+const E = document.getElementById("E")
+E.textContent = "かむちゃん"
+const F = document.getElementById("F")
+F.style.color = "red"
+console.log(E)
+const G = document.getElementById("G")
+G.className = "zou Y"
+F.classList.add("hello")
+G.classList.remove("Y")
+
+const Keronnu = document.getElementById("keronnu")
+const kero = document.createElement("div")
+kero.className = "nnu"
+kero.textContent = "ケロンヌ"
+
+const A = document.createElement("div")
+A.textContent = "アマガエル"
+
+const B = document.createElement("div")
+B.textContent = "ガマガエル"
+
+const C = document.createElement("div")
+C.textContent = "ヒキガエル"
+
+const D = document.createElement("div")
+D.textContent = "ウシガエル"
+Keronnu.appendChild(kero)
+Keronnu.before(A)
+Keronnu.prepend(B)
+Keronnu.append(C)
+Keronnu.after(D)
+F.remove()
+
+const kerokero = document.getElementById("kaeru")
+kerokero.textContent = ""
