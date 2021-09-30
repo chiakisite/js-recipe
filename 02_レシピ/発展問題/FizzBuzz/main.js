@@ -1,6 +1,7 @@
-let inputNumber
+const Click = document.getElementById("click")
 
-const FizzBuzz = function(inputNumber) {
+const FizzBuzz = function() {
+  const inputNumber = document.getElementById("Element").value
   for (let i = 1; i <= inputNumber; i++) {
     if (i % 15 === 0) {
       console.log("FizzBuzz")
@@ -14,10 +15,6 @@ const FizzBuzz = function(inputNumber) {
   }
 }
 
-window.document.onkeydown = function(event) {
-  if (event.key === "Enter") {
-    inputNumber = document.getElementById("Element")
-  }
+Click.onclick = function() {
+  FizzBuzz()
 }
-
-FizzBuzz(inputNumber)
