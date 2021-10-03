@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WebExpertコーステンプレート</title>
+  </head>
+  <body>
+    <h1>私の趣味はなんでしょう？</h1>
+    <button id="music">音楽を聴く</button>
+    <button id="reading">読書</button>
+    <button id="canp">キャンプ</button>
+    <p id="choice"></p>
+    <script>
+      const music = document.getElementById("music")
+      const reading = document.getElementById("reading")
+      const canp = document.getElementById("canp")
+      const choice = document.getElementById("choice")
+      music.onclick = function() {
+        choice.textContent = "正解！"
+      }
+      reading.onclick = function() {
+        choice.textContent = "はずれ！最近あんまし本読んでない……"
+      }
+      canp.onclick = function() {
+        choice.textContent = "はずれ！インドア派なんです！！"
+      }
+    </script>
+  </body>
+</html>
