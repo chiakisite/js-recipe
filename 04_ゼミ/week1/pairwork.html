@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -10,21 +10,48 @@
     <h1>私の趣味はなんでしょう？</h1>
     <button id="music">音楽を聴く</button>
     <button id="reading">読書</button>
-    <button id="canp">キャンプ</button>
+    <button id="camp">キャンプ</button>
     <p id="choice"></p>
+    <img
+      id="image"
+      src="https://1.bp.blogspot.com/-NzLABfjxAwo/U82z-dGtVoI/AAAAAAAAjPg/5WbmcIv3jXE/s330/quiz_woman_maru.png"
+      alt=""
+    />
     <script>
       const music = document.getElementById("music")
       const reading = document.getElementById("reading")
-      const canp = document.getElementById("canp")
+      const camp = document.getElementById("camp")
       const choice = document.getElementById("choice")
+      const image = document.getElementById("image")
+      const src = image.getAttribute("src")
+
       music.onclick = function() {
         choice.textContent = "正解！"
+        console.dir(music)
+        image.setAttribute(
+          "src",
+          "https://1.bp.blogspot.com/-SPSAT5RhnCk/WxvKRA10-XI/AAAAAAABMoA/ONSiDNDxiroz9QwjMES3qlqcv8uX4JlQQCLcBGAs/s400/music_headphone_woman.png",
+        )
+        document.getElementById("reading").setAttribute("disabled", true)
+        document.getElementById("camp").setAttribute("disabled", true)
       }
       reading.onclick = function() {
         choice.textContent = "はずれ！最近あんまし本読んでない……"
+        image.setAttribute(
+          "src",
+          "https://1.bp.blogspot.com/-3vLse3-fSSs/XwkxcjGdlbI/AAAAAAABaAc/AePrl7fI3vUH5Fsdu9JlDEcDEWRCzulSwCNcBGAsYHQ/s400/eye_ganseihirou_book_woman.png",
+        )
+        document.getElementById("music").setAttribute("disabled", true)
+        document.getElementById("camp").setAttribute("disabled", true)
       }
-      canp.onclick = function() {
+      camp.onclick = function() {
         choice.textContent = "はずれ！インドア派なんです！！"
+        image.setAttribute(
+          "src",
+          "https://2.bp.blogspot.com/-mz-h_JDXNPc/WevpCDO-doI/AAAAAAABHvU/Pcxfm0DSkMYnG3kefmMpJpm5g20wxxRYgCLcBGAs/s450/camp_gramping.png",
+        )
+        document.getElementById("music").setAttribute("disabled", true)
+        document.getElementById("reading").setAttribute("disabled", true)
       }
     </script>
   </body>
