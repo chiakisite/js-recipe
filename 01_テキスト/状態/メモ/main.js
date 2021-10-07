@@ -37,13 +37,10 @@ addButton.onclick = function() {
 
 removeButton.onclick = function() {
   //状態の更新
-  list.pu
+  list = []
 
   // 状態の変化を画面に表示する
-  const card = document.createElement("div")
-  card.className = "card"
-  card.textContent = text
-  container.append(card)
+  removeButton.lidt = JSON.stringify(list)
 
-  input.value = ""
+  container.textContent = ""
 }
