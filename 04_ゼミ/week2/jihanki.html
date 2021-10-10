@@ -13,48 +13,119 @@
       <button id="add-button-100">
         100円入れる
       </button>
+      <div>
+        <h4></h4>
+        <button id="otsuri-button">お釣り</button>
+      </div>
       <h4>↓財布↓</h4>
       <div id="display-saifu">1000</div>
       <h4>↓投入金額↓</h4>
       <div id="display-jihanki-money">0</div>
-    </section>
     <section>
       <h3>商品を買う</h3>
-      <button id="buy-button-tea">お茶(100円)</button>
+      <button id="buy-button-tea" disabled>お茶(100円)</button>
+      <h4></h4>
+      <button id="buy-button-beer" disabled>ビール(150円)</button>
     </section>
     <section>
       <h3>買った商品</h3>
       <div id="display-items"></div>
     </section>
     <script>
-      let saifu = 1000
-      let jihankiMoney = 0
+      let saifu = 1000;
+      let jihankiMoney = 0;
+      let otsuri = 0;
+      let OKTea = false;
+      let OKBeer = false;
 
       // HTML要素を取得する
-      const buyButtonTea = document.getElementById("buy-button-tea")
-      const displayItems = document.getElementById("display-items")
-      const addButton100 = document.getElementById("add-button-100")
-      const displaySaifu = document.getElementById("display-saifu")
+      const buyButtonTea = document.getElementById("buy-button-tea");
+      const displayItems = document.getElementById("display-items");
+      const addButton100 = document.getElementById("add-button-100");
+      const displaySaifu = document.getElementById("display-saifu");
       const displayJihankiMoney = document.getElementById(
-        "display-jihanki-money",
-      )
+        "display-jihanki-money"
+      );
+      const otsuriButton = document.getElementById("otsuri-button");
+      const buyButtonBeer = document.getElementById("buy-button-beer");
+
+      const OK = function() {
+          if(OKTea === true) {
+              buyButtonTea.removeAttribute("disabled");
+          }
+          if(OKBeer === true) {
+              buyButtonBeer.removeAttribute("disabled")
+          }
+      }
+
+      const NG = function() {
+        if(OKTea === false){
+            buyButtonTea.addAttribute("disabled");
+          }
+          if(OKBeer === false){
+            buyButtonBeer.addAttribute("disabled");
+          }
+      }
+
+      const OKOver = function() {
+        if (jihankiMoney >= 150){
+              OKTea = true;
+              OKBeer = true;
+              OK();
+          } else if (jihankiMoney >= 100){
+            OKTea = true;
+            OK();
+          }
+      }
+
+      const OKUnder = function() {
+        if (jihankiMoney < 100){
+              OKTea = false;
+              OKBeer = false;
+              NG();
+          } else if (jihankiMoney < 150){
+            OKBeer = false;
+            NG();
+          }
+      }
 
       // buyButtonTea を押した時の処理
-      addButton100.onclick = function() {
-        if (saifu >= 100) {
-          saifu -= 100
-          jihankiMoney += 100
-          displaySaifu.textContent = saifu
-          displayJihankiMoney.textContent = jihankiMoney
+      addButton100.onclick = function () {
+          saifu -= 100;
+          jihankiMoney += 100;
+          displaySaifu.textContent = saifu;
+          displayJihankiMoney.textContent = jihankiMoney;
+         OKOver();
         }
-      }
-      buyButtonTea.onclick = function() {
+
+      otsuriButton.onclick = function () {
+        if (jihankiMoney >= 0) {
+          saifu += jihankiMoney;
+          jihankiMoney = 0;
+          displaySaifu.textContent = saifu;
+          displayJihankiMoney.textContent = jihankiMoney;
+        }
+        OKUnder();
+      };
+
+      buyButtonTea.onclick = function () {
         if (jihankiMoney >= 100) {
-          jihankiMoney -= 100
-          displayItems.textContent += "🍵"
-          displayJihankiMoney.textContent = jihankiMoney
+          jihankiMoney -= 100;
+          displayItems.textContent += "🍵";
+          displayJihankiMoney.textContent = jihankiMoney;
         }
-      }
+        OKUnder();
+      };
+
+      buyButtonBeer.onclick = function () {
+        if (jihankiMoney >= 150) {
+          jihankiMoney -= 150;
+          displayItems.textContent += "🍺";
+          displayJihankiMoney.textContent = jihankiMoney;
+        }
+        OKUnder();
+      };
+
     </script>
   </body>
 </html>
