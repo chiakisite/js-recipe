@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="display">カウント開始！</div>
+    <button id="up">+1</button>
+    <button id="down">-1</button>
+    <div>
+      <button id="dengen">電源ボタン</button>
+    </div>
+    <div id="rireki"></div>
+    <script>
+      const display = document.getElementById("display")
+      const up = document.getElementById("up")
+      const down = document.getElementById("down")
+      const dengen = document.getElementById("dengen")
+      const rireki = document.getElementById("rireki")
+
+      let count = 0
+      let onoff = false
+
+      dengen.onclick = () => {
+        onoff = !onoff
+        dengen.textContent = onoff ? "(^^)" : "(´・ω・`)"
+      }
+    </script>
+  </body>
+</html>
