@@ -1,0 +1,18 @@
+.image {
+  height: 35rem;
+  width: 30rem;
+}
+
+#choice-container {
+  margin: 1rem 4rem;
+}
+
+.button {
+  margin-right: 4rem;
+  padding: 0.3rem 0.8rem;
+}
+
+#feedback {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}

@@ -5,24 +5,24 @@ const choice2 = document.getElementById("choice-2")
 const choice3 = document.getElementById("choice-3")
 const feedback = document.getElementById("feedback")
 
-const words = ["ゴリアテ", "ゼニガメ", "ガニメデ"]
+const words = ["アンジュルム", "アップアップガールズ(仮)", "つばきファクトリー"]
 
 //クイズの内容
 const quiz = {
-  text: "この星の名前は何でしょう？",
-  image: "Ganymede.jpg",
+  text: "次のうち、ハロプロのグループでないのはどれ？",
+  image: "idol_woman.jpg",
   choices: [
     {
-      text: words[2],
-      feedback: `正解！${words[2]}は、木星の第三惑星だよ！`,
+      text: words[0],
+      feedback: `残念！ ${words[0]}は、昔スマイレージ、って名前で活動していたハロプロのアイドルグループだよ！`,
     },
     {
       text: words[1],
-      feedback: `残念！${words[1]}は、クサガメまたはニホンイシガメの幼体だよ。`,
+      feedback: `正解！${words[1]}は、アップフロント所属だけどハロプロではないんだ！`,
     },
     {
       text: words[0],
-      feedback: `残念！${words[0]}は、旧約聖書に登場するダビデに石で殺される巨人だよ。`,
+      feedback: `残念！${words[2]}は、Berryz工房や℃-uteのスピリットを受け継ぐハロプロのグループだよ！`,
     },
   ],
 }
@@ -45,7 +45,7 @@ const reloadQuiz = function() {
 const choose = function(choiceString) {
   //フィードバックの表示
   feedback.textContent = quiz.choices[choiceString].feedback
-} //選択する処理
+} // 選択する処理
 choice1.onclick = function() {
   choose(0)
 }
