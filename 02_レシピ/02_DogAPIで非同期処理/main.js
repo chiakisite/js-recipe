@@ -7,4 +7,5 @@ fetch("https://dog.ceo/api/breeds/image/random")
   })
   .then((data) => {
     imageElement.src = data.message // 画像を表示する
+    console.log(data)
   })
