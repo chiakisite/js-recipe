@@ -1,0 +1,23 @@
+.square {
+  margin: 200px 550px;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: inline-block;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.transition {
+  transition: all 1s;
+}
+
+.triangle {
+  border-radius: initial;
+  border-top: solid 300px transparent;
+  border-right: solid 300px transparent;
+  border-bottom: solid 300px black;
+  border-left: solid 300px transparent;
+}
