@@ -21,7 +21,8 @@ header {
 }
 .main-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: left;
   align-items: flex-start;
   height: 100vh;
   padding: 52px 12px 12px 12px;
@@ -32,6 +33,7 @@ header {
   min-width: 250px;
   width: 250px;
   padding: 8px;
+  margin-top: 20px;
   border-radius: 4px;
   background-color: #e2e4e6;
 }
@@ -83,6 +85,7 @@ header {
 }
 .card:hover .delete:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .input-container {
   display: flex;
@@ -113,10 +116,18 @@ header {
   border-radius: 4px;
   border-bottom: 1px solid #2aa138;
   user-select: none;
+  cursor: pointer;
 }
+
 .input-container .input-button:active {
   transform: translateY(2px);
 }
 .list-footer {
   margin-top: 8px;
+}
+
+.add-category {
+  padding-top: 10px;
+  cursor: pointer;
+  display: inline-block;
 }
